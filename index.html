@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wedding Syar'i</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #f8f8f8;
+    color: #333;
+}
+
+/* NAVBAR */
+nav {
+    background: #fff;
+    padding: 18px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 100;
+}
+
+nav h2 {
+    color: #8c7b4a;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    background:
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1523438885200-e635ba2c371e");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.hero-box {
+    text-align: center;
+    color: white;
+    max-width: 700px;
+}
+
+.hero-box h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-box p {
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+.hero-box a {
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin: 0 6px;
+    font-weight: 500;
+}
+
+.btn-main {
+    background: #d4af37;
+    color: white;
+}
+
+.btn-outline {
+    border: 2px solid white;
+    color: white;
+}
+
+/* KEUNGGULAN */
+.features {
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background: white;
+    width: 280px;
+    padding: 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+}
+
+.feature h3 {
+    color: #8c7b4a;
+    margin-bottom: 10px;
+}
+
+/* GALERI PREVIEW */
+.gallery {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.gallery h2 {
+    margin-bottom: 30px;
+}
+
+.gallery-box {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.gallery-box div {
+    width: 260px;
+    height: 170px;
+    background: #ddd;
+    border-radius: 16px;
+}
+
+/* FOOTER */
+footer {
+    background: #8c7b4a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* WHATSAPP */
+.wa {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    font-size: 22px;
+    padding: 15px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    .hero-box h1 {
+        font-size: 30px;
+    }
+    nav {
+        padding: 15px 25px;
+    }
+}
+/* LOGO HERO */
+.hero-logo {
+    width: 90px;           /* ukuran logo */
+    margin-bottom: 20px;   /* jarak ke judul */
+    object-fit: contain;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <h2>Wedding Syar'i</h2>
+    <ul>
+        <li><a href="#">Beranda</a></li>
+        <li><a href="galeri.html">Galeri</a></li>
+        <li><a href="paket.html">Paket</a></li>
+        <li><a href="menu.html">Lihat Menu</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-box">
+
+        <!-- LOGO -->
+        <img src="llogo.png" alt="Logo Wedding Syar'i" class="hero-logo">
+
+        <h1>Mewujudkan Pernikahan<br>Syar'i yang Berkah</h1>
+        <p>Konsep pernikahan islami yang elegan, sederhana, dan sesuai syariat.</p>
+
+        <a href="paket.html" class="btn-main">Lihat Paket</a>
+        <a href="order.html"class="btn-main">Pesan Sekarang</a>
+
+    </div>
+</section>
+
+
+<!-- KEUNGGULAN -->
+<section class="features">
+    <div class="feature">
+        <h3>✔ Sesuai Syariat</h3>
+        <p>Tanpa ikhtilat dan tetap menjaga adab islami.</p>
+    </div>
+    <div class="feature">
+        <h3>✔ Tim Amanah</h3>
+        <p>Profesional & berpengalaman wedding syar’i.</p>
+    </div>
+    <div class="feature">
+        <h3>✔ Paket Fleksibel</h3>
+        <p>Disesuaikan dengan kebutuhan & anggaran.</p>
+    </div>
+</section>
+
+<!-- GALERI -->
+<section class="gallery">
+    <a href="gallery>
+    <div class="gallery-box">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    © 2025 Wedding Syar'i • Pernikahan Berkah
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/6287840310922" class="wa" target="_blank">💬</a>
+
+</body>
+</html>
+
