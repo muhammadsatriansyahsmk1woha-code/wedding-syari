@@ -16,18 +16,18 @@
 }
 
 body {
-    background: #f8f8f8;
+    background: #f6f6f6;
     color: #333;
 }
 
-/* NAVBAR */
+/* NAVBAR - ANDROID */
 nav {
     background: #fff;
-    padding: 18px 50px;
+    padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
 }
 
 .logo-area {
@@ -37,11 +37,11 @@ nav {
 }
 
 .logo-area img {
-    width: 38px;
+    width: 36px;
 }
 
 .logo-area span {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #8c7b4a;
 }
@@ -49,7 +49,8 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    justify-content: space-between;
+    font-size: 14px;
 }
 
 nav ul li a {
@@ -65,39 +66,45 @@ nav ul li a {
     url("https://images.pexels.com/photos/3164658/pexels-photo-3164658.jpeg");
     background-size: cover;
     background-position: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
     color: white;
 }
 
 .header h1 {
-    font-size: 36px;
+    font-size: 26px;
+}
+
+.header p {
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 /* FORM */
 .form-section {
-    padding: 70px 20px;
+    padding: 35px 15px;
     display: flex;
     justify-content: center;
 }
 
 .form-box {
     background: white;
-    padding: 35px;
+    padding: 28px 22px;
     border-radius: 18px;
     width: 100%;
-    max-width: 520px;
-    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    max-width: 500px;
+    box-shadow: 0 6px 22px rgba(0,0,0,.08);
 }
 
 .form-box h2 {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
     color: #8c7b4a;
+    font-size: 20px;
 }
 
 .form-box label {
-    font-size: 14px;
+    font-size: 13px;
     margin-bottom: 6px;
     display: block;
 }
@@ -106,27 +113,31 @@ nav ul li a {
 .form-box select,
 .form-box textarea {
     width: 100%;
-    padding: 12px;
-    border-radius: 10px;
+    padding: 13px;
+    border-radius: 12px;
     border: 1px solid #ddd;
     margin-bottom: 18px;
+    font-size: 14px;
 }
 
 .form-box textarea {
     resize: none;
-    height: 100px;
+    height: 95px;
 }
 
 .btn-submit {
     width: 100%;
-    padding: 14px;
+    padding: 15px;
     background: #8c7b4a;
     color: white;
     border: none;
     border-radius: 30px;
     font-size: 15px;
     font-weight: 500;
-    cursor: pointer;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
 }
 
 /* FOOTER */
@@ -134,18 +145,9 @@ footer {
     background: #8c7b4a;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px) {
-    nav {
-        padding: 15px 25px;
-    }
-    .header h1 {
-        font-size: 28px;
-    }
+    padding: 18px;
+    font-size: 13px;
+    margin-top: 25px;
 }
 </style>
 </head>
@@ -155,7 +157,7 @@ footer {
 <!-- NAVBAR -->
 <nav>
     <div class="logo-area">
-        <img src="llogo.png" alt="Logo">
+        <img src="llogo.png">
         <span>Wedding Syar'i</span>
     </div>
     <ul>
@@ -169,7 +171,7 @@ footer {
 <!-- HEADER -->
 <section class="header">
     <h1>Form Pemesanan Wedding</h1>
-    <p>Isi data di bawah untuk konsultasi & pemesanan</p>
+    <p>Isi data untuk konsultasi & pemesanan</p>
 </section>
 
 <!-- FORM -->
@@ -181,7 +183,7 @@ footer {
         <input type="text" id="nama" placeholder="Nama Anda">
 
         <label>Nomor WhatsApp</label>
-        <input type="text" id="wa" placeholder="08xxxxxxxxxx">
+        <input type="tel" id="wa" placeholder="08xxxxxxxxxx">
 
         <label>Tanggal Akad</label>
         <input type="date" id="tanggal">
@@ -196,13 +198,15 @@ footer {
         <label>Catatan Tambahan</label>
         <textarea id="catatan" placeholder="Contoh: lokasi acara, tema warna, dll"></textarea>
 
-        <button class="btn-submit" onclick="kirimWA()">Kirim via WhatsApp</button>
+        <button class="btn-submit" onclick="kirimWA()">
+            Kirim Pesanan via WhatsApp
+        </button>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    © 2025 Wedding Syar'i • Form Pemesanan
+    © 2026 Wedding Syar'i • Form Pemesanan
 </footer>
 
 <script>
@@ -212,6 +216,11 @@ function kirimWA() {
     const tanggal = document.getElementById("tanggal").value;
     const paket = document.getElementById("paket").value;
     const catatan = document.getElementById("catatan").value;
+
+    if(!nama || !wa || !tanggal) {
+        alert("Mohon lengkapi data utama terlebih dahulu 🙏");
+        return;
+    }
 
     const pesan =
 `Assalamu'alaikum,

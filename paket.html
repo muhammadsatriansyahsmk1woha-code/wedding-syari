@@ -16,18 +16,18 @@
 }
 
 body {
-    background: #f8f8f8;
+    background: #f6f6f6;
     color: #333;
 }
 
-/* NAVBAR */
+/* NAVBAR - ANDROID */
 nav {
     background: #fff;
-    padding: 18px 50px;
+    padding: 15px 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.06);
 }
 
 .logo-area {
@@ -37,11 +37,11 @@ nav {
 }
 
 .logo-area img {
-    width: 38px;
+    width: 36px;
 }
 
 .logo-area span {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     color: #8c7b4a;
 }
@@ -49,7 +49,8 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 25px;
+    justify-content: space-between;
+    font-size: 14px;
 }
 
 nav ul li a {
@@ -61,55 +62,64 @@ nav ul li a {
 /* HEADER */
 .header {
     background:
-    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
+    linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)),
     url("https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg");
     background-size: cover;
     background-position: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
     text-align: center;
     color: white;
 }
 
 .header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.header p {
+    font-size: 14px;
+    margin-top: 8px;
 }
 
 /* PAKET */
 .paket {
-    padding: 70px 40px;
+    padding: 35px 20px;
 }
 
 .paket-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .paket-box {
     background: white;
     border-radius: 18px;
-    padding: 35px 25px;
+    padding: 28px 22px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,.06);
+    box-shadow: 0 6px 22px rgba(0,0,0,.08);
     position: relative;
+    transition: .3s;
+}
+
+.paket-box:active {
+    transform: scale(0.98);
 }
 
 .paket-box h3 {
-    font-size: 22px;
+    font-size: 20px;
     color: #8c7b4a;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .price {
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .paket-box ul {
     list-style: none;
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 .paket-box ul li {
@@ -118,8 +128,8 @@ nav ul li a {
 }
 
 .btn-order {
-    display: inline-block;
-    padding: 12px 28px;
+    display: block;
+    padding: 14px;
     border-radius: 30px;
     background: #8c7b4a;
     color: white;
@@ -127,21 +137,21 @@ nav ul li a {
     font-weight: 500;
 }
 
-/* BEST */
+/* BEST PACKAGE */
 .best {
     border: 2px solid #d4af37;
 }
 
 .badge {
     position: absolute;
-    top: -15px;
+    top: -14px;
     left: 50%;
     transform: translateX(-50%);
     background: #d4af37;
     color: white;
     padding: 6px 18px;
     border-radius: 20px;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 /* FOOTER */
@@ -149,17 +159,15 @@ footer {
     background: #8c7b4a;
     color: white;
     text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+    padding: 18px;
+    font-size: 13px;
+    margin-top: 30px;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px) {
-    nav {
-        padding: 15px 25px;
-    }
-    .header h1 {
-        font-size: 28px;
+/* DESKTOP */
+@media(min-width:768px) {
+    .paket-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 </style>
@@ -170,15 +178,14 @@ footer {
 <!-- NAVBAR -->
 <nav>
     <div class="logo-area">
-        <img src="llogo.png" alt="Logo">
+        <img src="llogo.png">
         <span>Wedding Syar'i</span>
     </div>
     <ul>
         <li><a href="index.html">Beranda</a></li>
         <li><a href="galeri.html">Galeri</a></li>
         <li><a href="paket.html">Paket</a></li>
-        <li><a href="menu.html">Lihat Menu</a></li>
-
+        <li><a href="menu.html">Menu</a></li>
     </ul>
 </nav>
 
@@ -192,7 +199,6 @@ footer {
 <section class="paket">
     <div class="paket-grid">
 
-        <!-- PAKET BASIC -->
         <div class="paket-box">
             <h3>Paket Basic</h3>
             <div class="price">Rp 5.000.000</div>
@@ -202,13 +208,12 @@ footer {
                 <li>✔ Dokumentasi Foto</li>
                 <li>✔ Konsultasi Gratis</li>
             </ul>
-            <a class="btn-order" 
+            <a class="btn-order"
                href="https://wa.me/6287840310922?text=Saya%20ingin%20pesan%20Paket%20Basic">
-               Pesan Sekarang
+               Pesan via WhatsApp
             </a>
         </div>
 
-        <!-- PAKET PREMIUM -->
         <div class="paket-box best">
             <div class="badge">Paling Diminati</div>
             <h3>Paket Premium</h3>
@@ -221,11 +226,10 @@ footer {
             </ul>
             <a class="btn-order"
                href="https://wa.me/6287840310922?text=Saya%20ingin%20pesan%20Paket%20Premium">
-               Pesan Sekarang
+               Pesan via WhatsApp
             </a>
         </div>
 
-        <!-- PAKET EXCLUSIVE -->
         <div class="paket-box">
             <h3>Paket Exclusive</h3>
             <div class="price">Rp 15.000.000</div>
@@ -237,7 +241,7 @@ footer {
             </ul>
             <a class="btn-order"
                href="https://wa.me/6287840310922?text=Saya%20ingin%20pesan%20Paket%20Exclusive">
-               Pesan Sekarang
+               Pesan via WhatsApp
             </a>
         </div>
 
